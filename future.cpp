@@ -183,7 +183,7 @@ public:
 
     void removeorder(uint64_t orderid){
         auto oitr = order_book.find( orderid );
-        eosio_assert(oitr == order_book.end(), "order does not exist")
+        eosio_assert(oitr == order_book.end(), "order does not exist");
         require_auth(oitr->owner);
         auto citr = clients.find(oitr->owner);
         if (citr == clients.end()) {
